@@ -14,8 +14,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
         ON DELETE RESTRICT
 );
 
-
-CREATE TABLE noticias (
+CREATE TABLE IF NOT EXISTS noticias (
     id_noticia SERIAL PRIMARY KEY,
     titulo VARCHAR(150),
     resumo TEXT NOT NULL,

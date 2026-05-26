@@ -9,8 +9,9 @@ const routes = Router();
 routes.use('/users', usersController);
 routes.use('/tipo-usuario', tipoUsuarioController);
 
-// separar rotas 👇
+// rotas separadas ✅
 routes.use('/api/noticias', noticiasController);
 routes.use('/api/noticias-diarias', noticiasDiariasController);
 
 module.exports = routes;
+``
