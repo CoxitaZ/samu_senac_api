@@ -389,6 +389,146 @@ DELETE /api/noticias/1
 
 Quando remove com sucesso, retorna `204 No Content`.
 
+## Cursos
+
+### Pagina de cursos
+
+Base da rota:
+
+```text
+/api/course-page
+```
+
+### Criar pagina
+
+```http
+POST /api/course-page
+```
+
+O body segue o payload completo definido no Notion, com blocos como `hero`, `overview`, `featuredCourse`, `learningPath`, `secondaryCourses` e `cta`.
+
+### Buscar pagina
+
+```http
+GET /api/course-page
+```
+
+Resposta:
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "hero": {},
+    "overview": [],
+    "featuredCourse": {},
+    "learningPath": {},
+    "secondaryCourses": [],
+    "cta": {}
+  }
+}
+```
+
+### Atualizar pagina completa
+
+```http
+PUT /api/course-page/1
+```
+
+### Atualizar parcialmente
+
+```http
+PATCH /api/course-page/1
+```
+
+Body:
+
+```json
+{
+  "hero": {
+    "title": "Novo titulo do hero"
+  }
+}
+```
+
+### Remover pagina
+
+```http
+DELETE /api/course-page/1
+```
+
+Resposta:
+
+```json
+{
+  "success": true,
+  "message": "Pagina removida com sucesso"
+}
+```
+
+### Cursos secundarios
+
+Base da rota:
+
+```text
+/api/courses
+```
+
+### Criar curso
+
+```http
+POST /api/courses
+```
+
+Body:
+
+```json
+{
+  "title": "Primeiros Socorros Basicos",
+  "description": "Curso introdutorio de emergencia.",
+  "thumbnail": "/uploads/thumb1.png",
+  "status": "Publicado",
+  "duration": "2h",
+  "level": "Iniciante"
+}
+```
+
+### Listar cursos
+
+```http
+GET /api/courses
+```
+
+### Buscar curso por ID
+
+```http
+GET /api/courses/1
+```
+
+### Atualizar curso
+
+```http
+PUT /api/courses/1
+```
+
+Body:
+
+```json
+{
+  "title": "Primeiros Socorros Avancado",
+  "status": "Rascunho"
+}
+```
+
+### Remover curso
+
+```http
+DELETE /api/courses/1
+```
+
+Quando remove com sucesso, retorna `204 No Content`.
+
 ## Validacoes
 
 Alguns exemplos de erro:
