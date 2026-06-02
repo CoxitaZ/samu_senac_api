@@ -8,7 +8,6 @@ const coursesController = require('./courses/');
 
 const routes = Router();
 
-
 routes.use('/users', usersController);
 routes.use('/tipo-usuario', tipoUsuarioController);
 routes.use('/api/noticias', noticiasController);
