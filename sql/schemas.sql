@@ -29,3 +29,22 @@ CREATE TABLE IF NOT EXISTS noticias (
     categoria VARCHAR(20) NOT NULL DEFAULT 'diaria',
     data DATE NOT NULL DEFAULT CURRENT_DATE
 );
+
+CREATE TABLE IF NOT EXISTS course_page (
+    id_course_page SERIAL PRIMARY KEY,
+    payload JSONB NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS courses (
+    id_course SERIAL PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    description TEXT,
+    thumbnail TEXT,
+    status VARCHAR(30) DEFAULT 'Rascunho',
+    duration VARCHAR(50),
+    level VARCHAR(50),
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
